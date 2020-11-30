@@ -46,7 +46,6 @@
 </head>
 
 <body data-spy="scroll" data-target="#navbarSupportedContent" data-offset="0">
-
     <!--====== Color-Panel =====-->
     <section class="colorRang">
         <div class="colorPicker text-center bg-primary-color">
@@ -206,7 +205,7 @@
                         </p>
 
                         <div class="about-btns pt-1">
-                            <a href="#"
+                            <a href="{{ asset('public/pdf/Research.pdf') }}" download 
                                 class="btn on-bg-color bg-primary-color bg-primary-colorh fw-semi-bold br0">Download
                                 Resume</a>
                             <a href="#"
@@ -385,41 +384,15 @@
             </div><!-- end row -->
             <div class="row">
                 <div class="col-lg-8 col-10 mx-sm-auto ml-auto fw-medium">
+
+
                     <div class="pbar-wrapper">
                         <div class="progress bg-white-c">
-                            <div class="progress-bar bg-primary-color on-bg-color pr-5 pbar1" role="progressbar"
-                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">WordPress</div>
+                            <div class="progress-bar bg-primary-color on-bg-color pr-5 " style="width: 85%" role="progressbar">WordPress</div>
                         </div><!-- end progress -->
-                        <span class="text-black">99%</span>
+                        <span class="text-black">50%</span>
                     </div><!-- end pbar-wrapper -->
-                    <div class="pbar-wrapper">
-                        <div class="progress mt-md-4 mt-sm-3 mt-2 bg-white-c">
-                            <div class="progress-bar bg-primary-color on-bg-color pr-5 pbar2" role="progressbar"
-                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">HTML</div>
-                        </div><!-- end progress -->
-                        <span class="text-black">85%</span>
-                    </div><!-- end pbar-wrapper -->
-                    <div class="pbar-wrapper">
-                        <div class="progress mt-md-4 mt-sm-3 mt-2 bg-white-c">
-                            <div class="progress-bar bg-primary-color on-bg-color pr-5 pbar3" role="progressbar"
-                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">JOOMLA</div>
-                        </div><!-- end progress -->
-                        <span class="text-black">78%</span>
-                    </div><!-- end pbar-wrapper -->
-                    <div class="pbar-wrapper">
-                        <div class="progress mt-md-4 mt-sm-3 mt-2 bg-white-c">
-                            <div class="progress-bar bg-primary-color on-bg-color pr-5 pbar4" role="progressbar"
-                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Css</div>
-                        </div><!-- end progress -->
-                        <span class="text-black">82%</span>
-                    </div><!-- end pbar-wrapper -->
-                    <div class="pbar-wrapper">
-                        <div class="progress mt-md-4 mt-sm-3 mt-2 bg-white-c">
-                            <div class="progress-bar bg-primary-color on-bg-color pr-5 pbar5" role="progressbar"
-                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">PhotoShop</div>
-                        </div><!-- end progress -->
-                        <span class="text-black">90%</span>
-                    </div><!-- end pbar-wrapper -->
+                   
                 </div><!-- end column -->
             </div><!-- end row -->
         </div><!-- end container -->
@@ -1247,25 +1220,27 @@
                     </div><!-- end row -->
                     <div class="row">
                         <div class="col">
-                            <form class="needs-validation" novalidate>
+                            <form method="post" action="{{ route('store.contact') }}" class="needs-validation" novalidate>
+                                 @csrf
                                 <div class="form-group">
                                     <input type="text"
                                         class="form-control mt-0 primary-border-e primary-border-eh bg-white-e"
-                                        id="exampleInputName1" placeholder="Full Name" required>
+                                        id="exampleInputName1" name="name" placeholder="Full Name" required>
                                 </div><!-- end form-group -->
                                 <div class="form-group">
                                     <input type="email"
                                         class="form-control primary-border-e primary-border-eh bg-white-e"
-                                        id="exampleInputEmail1" placeholder="Email" required>
+                                        id="exampleInputEmail1" name="email" placeholder="Email" required>
                                 </div><!-- end form-group -->
                                 <div class="form-group">
-                                    <textarea class="form-control primary-border-e primary-border-eh bg-white-e"
+                                    <textarea  name="comment" class="form-control primary-border-e primary-border-eh bg-white-e"
                                         id="exampleFormControlTextarea1" rows="8" placeholder="Message"
                                         required></textarea>
                                 </div><!-- end form-group -->
                                 <button type="submit"
                                     class="btn btn-block bg-primary-color bg-primary-colorh on-bg-color">Send
                                     Message</button>
+                                  
                             </form>
                         </div><!-- end column -->
                     </div><!-- end row -->
@@ -1327,6 +1302,8 @@
     <!-- Custom Particle Backgrounds End -->
 
     <script src="{{ asset('public/frontend/js/custom-javascript.js')}}"></script>
+    
+
     <!-- Page Scripts Ends -->
 
 

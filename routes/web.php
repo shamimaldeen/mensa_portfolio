@@ -73,3 +73,10 @@ Route::post('store/settings', 'SettingController@storesettings')->name('store.se
 Route::get('delete/settings/{id}','SettingController@Deletesettings');
 Route::get('edit/settings/{id}','SettingController@Editsettings'); 
 Route::post('update/settings/{id}','SettingController@Updatesettings');
+
+
+
+
+// contact   forntend
+Route::post('store/contact', 'HomeController@storecontact')->name('store.contact'); 
+

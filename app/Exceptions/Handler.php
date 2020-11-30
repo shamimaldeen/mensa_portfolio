@@ -36,7 +36,22 @@ class Handler extends ExceptionHandler
      */
     public function report(Throwable $exception)
     {
+       /* if ($this->shouldReport($exception)) {
+            $this->sendEmail($exception); // sends an email
+        }*/
+
         parent::report($exception);
+    }
+
+    /**
+     * Sends an email to the developer about the exception.
+     *
+     * @param  \Exception  $exception
+     * @return void
+     */
+    public function sendEmail(Exception $exception)
+    {
+        // sending email
     }
 
     /**
